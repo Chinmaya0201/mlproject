@@ -38,8 +38,8 @@ async def predict_datapoint(request: Request):
     
     form_data = await request.form()
 
-    gender = form_data['gender']
-    print(gender)
+    # gender = form_data['gender']
+    # print(gender)
     
     data = CustomData(
             gender=form_data['gender'],
