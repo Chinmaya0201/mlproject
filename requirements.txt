@@ -7,4 +7,7 @@ catboost
 xgboost
 Flask
 dill
+fastapi
+uvicorn
+python-multipart
 # -e .
