@@ -10,12 +10,12 @@ app = FastAPI()
 
 templates = Jinja2Templates('templates')
 
-@app.get("/", response_class= HTMLResponse)
-def index(request: Request):
+# @app.get("/", response_class= HTMLResponse)
+# def index(request: Request):
 
-    context = {'request':request}
+#     context = {'request':request}
 
-    return templates.TemplateResponse("index.html", context= context)
+#     return templates.TemplateResponse("index.html", context= context)
 
 # @app.add_route('/predictdata', methods= ['GET', 'POST'], response_class= HTMLResponse)
 # def predict_datapoint(request: Request):
@@ -26,14 +26,14 @@ def index(request: Request):
 
 #         return templates.TemplateResponse('index.html', context= context)
 
-@app.get('/predictdata', response_class= HTMLResponse)
+@app.get('/', response_class= HTMLResponse)
 def predict_datapoint(request: Request):
     
     context = {'request':request}
 
     return templates.TemplateResponse('home.html', context= context)
 
-@app.post('/predictdata', response_class= HTMLResponse)
+@app.post('/', response_class= HTMLResponse)
 async def predict_datapoint(request: Request):
     
     form_data = await request.form()
