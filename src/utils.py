@@ -11,6 +11,8 @@ from sklearn.metrics import r2_score
 
 from src.exception import CustomException
 
+PATH = 'Data/stud.csv'
+
 def save_object(file_path, obj):
 
     try:
@@ -68,10 +70,16 @@ def load_object(file_path):
     except Exception as e:
         raise CustomException(e, sys)
     
+def get_data_file_path():
+
+    return os.path.join('Data','stud.csv')
+    
 
 def get_gender_options():
 
-    df = pd.read_csv(r'Data\stud.csv')
+    #PATH = get_data_file_path()
+
+    df = pd.read_csv(PATH)
 
     values_list = df['gender'].unique()
 
@@ -79,7 +87,9 @@ def get_gender_options():
 
 def get_race_ethnicity_options():
 
-    df = pd.read_csv(r'Data\stud.csv')
+    #PATH = get_data_file_path()
+
+    df = pd.read_csv(PATH)
 
     values_list = df['race_ethnicity'].unique()
 
@@ -87,7 +97,9 @@ def get_race_ethnicity_options():
 
 def get_parental_level_of_education_options():
 
-    df = pd.read_csv(r'Data\stud.csv')
+    #PATH = get_data_file_path()
+
+    df = pd.read_csv(PATH)
 
     values_list = df['parental_level_of_education'].unique()
 
@@ -95,7 +107,9 @@ def get_parental_level_of_education_options():
 
 def get_lunch_options():
 
-    df = pd.read_csv(r'Data\stud.csv')
+    #PATH = get_data_file_path()
+
+    df = pd.read_csv(PATH)
 
     values_list = df['lunch'].unique()
 
@@ -103,15 +117,14 @@ def get_lunch_options():
 
 def get_test_preparation_course_options():
 
-    df = pd.read_csv(r'Data\stud.csv')
+    #PATH = get_data_file_path()
+
+    df = pd.read_csv(PATH)
 
     values_list = df['test_preparation_course'].unique()
 
     return values_list
 
 if __name__ == "__main__":
-    pass
 
-
-
-    #print(get_gender_options())
+    get_data_file_path()
