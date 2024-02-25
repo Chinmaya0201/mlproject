@@ -67,3 +67,49 @@ def load_object(file_path):
 
     except Exception as e:
         raise CustomException(e, sys)
+    
+
+def get_gender_options():
+
+    df = pd.read_csv('notebook\data\stud.csv')
+
+    values_list = df['gender'].unique()
+
+    return values_list
+
+def get_race_ethnicity_options():
+
+    df = pd.read_csv('notebook\data\stud.csv')
+
+    values_list = df['race_ethnicity'].unique()
+
+    return values_list
+
+def get_parental_level_of_education_options():
+
+    df = pd.read_csv('notebook\data\stud.csv')
+
+    values_list = df['parental_level_of_education'].unique()
+
+    return values_list
+
+def get_lunch_options():
+
+    df = pd.read_csv('notebook\data\stud.csv')
+
+    values_list = df['lunch'].unique()
+
+    return values_list
+
+def get_test_preparation_course_options():
+
+    df = pd.read_csv('notebook\data\stud.csv')
+
+    values_list = df['test_preparation_course'].unique()
+
+    return values_list
+
+if __name__ == "__main__":
+    pass
+
+    #print(get_gender_options())

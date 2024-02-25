@@ -10,4 +10,5 @@ dill
 fastapi
 uvicorn
 python-multipart
+streamlit
 # -e .
