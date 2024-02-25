@@ -66,4 +66,4 @@ async def predict_datapoint(request: Request):
 
 if __name__ == '__main__':
 
-    uvicorn.run("app_v2:app", reload= True)
+    uvicorn.run("app_v2:app", reload= True, port= 8000 )
